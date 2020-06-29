@@ -1,0 +1,48 @@
+zuul:
+  prefix: /gate-way
+  routes:
+    reactive_app:
+      path: /**
+      seviceId: REACTIVE_APP
+    ogri_portal:
+      path: /**
+      seviceId: OGRI_PORTAL
+
+
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8085/eureka
+  instance:
+    hostname: localhost
+
+server:
+  port: 8086
+
+spring:
+  application:
+    name: api_gateway
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+
+
+
+management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+
+    endpoint:
+      health:
+        show-details: ALWAYS
