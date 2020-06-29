@@ -1,0 +1,29 @@
+schema {
+    query: Query
+}
+
+type Query{
+    allOgriUsers:[OgriUser]
+    ogriUser(id:String):OgriUser
+}
+
+type OgriUser{
+    userId:String
+    userName:String
+    aadharCardNumber:Int
+
+}
+input OgriUserInput{
+    userId:String
+    userName:String
+    lastName:String
+    country:String
+    state:String
+    district:String
+    pinCode:Int
+    aadharCardNumber:Int
+
+}
+type Mutation {
+    saveUser( ogriUser: OgriUserInput):OgriUser
+}
