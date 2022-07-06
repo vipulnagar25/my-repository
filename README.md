@@ -1,1 +1,1 @@
-This Repository contain all cloud technlology 
+This Repository contain all corejava and ds algo
