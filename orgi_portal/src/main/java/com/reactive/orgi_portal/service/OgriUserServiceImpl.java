@@ -106,7 +106,7 @@ public class OgriUserServiceImpl implements OgriUserService {
                 .groupName("OgriUser")
                 .commandName("getAllOgriUserDb")
                 .toFlux(); */
-        return orgiUserRepository.findAll().delayElements(Duration.ofSeconds(1));
+        return orgiUserRepository.findAll();
                // .timeout(Duration.ofMillis(1)).onErrorResume(this::getAllOgriUserFallBack);
     }
 

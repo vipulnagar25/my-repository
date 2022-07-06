@@ -1,5 +1,5 @@
 spring:
-#  profiles: dev
+  #  profiles: dev
   # kafka:
   #  template:
   #   default-topic: ogriUser-events
@@ -18,11 +18,11 @@ spring:
     mongodb:
       host: localhost
       port: 27017
-      database: ogri_portal
+      database: reactive-app
   application:
-    name: ogri_portal
+    name: REACTIVE-APP
 server:
-  port: 8082
+  port: 8084
 
 
 eureka:
@@ -85,7 +85,7 @@ graphql:
     introspection-enabled: true
 
 actionbean:
-    enabled: false
+  enabled: false
 
 ---
 
@@ -95,11 +95,11 @@ spring:
     mongodb:
       host: localhost
       port: 27017
-      database: ogri_portal
+      database: reactive-app
   application:
-    name: ogri_portal
+    name: REACTIVE-APP
 server:
-  port: 8082
+  port: 8084
 
 
 eureka:
