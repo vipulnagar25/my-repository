@@ -34,44 +34,45 @@ eureka:
   instance:
     hostname: localhost
 
+
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      reactiveService:
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 5s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED
+
+
+  retry:
+    instances:
+      reactiveService:
+        maxRetryAttempts: 5
+        waitDuration: 10s
+
+
 management:
+  health:
+    circuitbreakers:
+      enabled: true
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: health
+  endpoint:
+    health:
+      show-details: always
 
 
 
 
-
-
-#resilience4j:
-#  circuitbreaker:
-#    configs:
-#      default:
-#        registerHealthIndicator: true
-#        slidingWindowSize: 10
-#        minimumNumberOfCalls: 5
-#        permittedNumberOfCallsInHalfOpenState: 3
-#        automaticTransitionFromOpenToHalfOpenEnabled: true
-#        waitDurationInOpenState: 5s
-#        failureRateThreshold: 50
-#        eventConsumerBufferSize: 10
-#        recordExceptions:
-#          - org.springframework.web.client.HttpServerErrorException
-#          - java.util.concurrent.TimeoutException
-#          - java.io.IOException
-#    instances:
-#      service1:
-#        registerHealthIndicator: true
-#        ringBufferSizeInClosedState: 10
-#        ringBufferSizeInHalfOpenState: 3
-#        waitDurationInOpenState: PT50S
-#        failureRateThreshold: 50
-#        eventConsumerBufferSize: 10
-#
-#
-#
 graphql:
   servlet:
     mapping: /graphql

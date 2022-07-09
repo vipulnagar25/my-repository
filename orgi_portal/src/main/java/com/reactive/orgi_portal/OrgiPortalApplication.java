@@ -11,7 +11,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.kafka.annotation.EnableKafka;
+//import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -36,7 +36,7 @@ import static springfox.documentation.builders.RequestHandlerSelectors.basePacka
 //@EnableCircuitBreaker
 @EnableDiscoveryClient
 @ComponentScan(basePackages = {"com.reactive"})
-@EnableKafka
+//@EnableKafka
 @Configuration
 public class OrgiPortalApplication implements CommandLineRunner {
     @Autowired

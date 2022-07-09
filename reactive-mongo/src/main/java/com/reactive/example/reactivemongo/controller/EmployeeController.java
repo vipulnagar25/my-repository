@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import javax.validation.Valid;
+
 
 @Slf4j
 @RestController
@@ -50,7 +50,7 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public Mono<ObjectNode> saveEmployee(@RequestBody @Valid CreateEmployeeRequestBody employeeData) {
+    public Mono<ObjectNode> saveEmployee(@RequestBody CreateEmployeeRequestBody employeeData) {
         Employee employee = Employee.builder().empCode(employeeData.getEmpCode())
                 .empName(employeeData.getEmpName())
                 .empGender(employeeData.getEmpGender())

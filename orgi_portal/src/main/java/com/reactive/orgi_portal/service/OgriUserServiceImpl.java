@@ -8,28 +8,19 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.reactive.orgi_portal.model.OgriUser;
 import com.reactive.orgi_portal.repository.OrgiUserRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.kafka.common.header.Header;
-import org.apache.kafka.common.header.internals.RecordHeader;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
 
 @Slf4j
 @Service
 public class OgriUserServiceImpl implements OgriUserService {
     private final OrgiUserRepository orgiUserRepository;
     private final WebClient webClient;
-    @Autowired
-    KafkaTemplate<Integer, String> kafkaTemplate;
+//    @Autowired
+//    KafkaTemplate<Integer, String> kafkaTemplate;
     @Autowired
     ObjectMapper objectMapper;
 
@@ -85,7 +76,8 @@ public class OgriUserServiceImpl implements OgriUserService {
     @Override
     public Mono<Long> deleteOgriUser(Integer acn) {
         log.info("start calling of saveOgriUser from OgriUserServiceImpl");
-        Mono<Long> response = orgiUserRepository.deleteByAadharCardNumber(acn);
+        Mono<Long> response = orgiUserRepository.
+                deleteByAadharCardNumber(acn);
         response.flatMap(value -> {
             log.info("Is user deleted yes?No:{}", value);
             return Mono.just(value);
@@ -167,26 +159,26 @@ public class OgriUserServiceImpl implements OgriUserService {
         return Flux.empty();
     }
 
-    private ProducerRecord<Integer, String> buildProducerRecord(Integer key, String value, String topic) {
-
-
-        List<Header> recordHeaders = new ArrayList<>();
-        recordHeaders.add(new RecordHeader("event-source", "scanner".getBytes()));
-
-        return new ProducerRecord<>(topic, null, key, value, recordHeaders);
-    }
-
-    private void handleFailure(Integer key, String value, Throwable ex) {
-        log.error("Error Sending the Message and the exception is {}", ex.getMessage());
-        try {
-            throw ex;
-        } catch (Throwable throwable) {
-            log.error("Error in OnFailure: {}", throwable.getMessage());
-        }
-
-    }
-
-    private void handleSuccess(Integer key, String value, SendResult<Integer, String> result) {
-        log.info("Message Sent SuccessFully for the key : {} and the value is {} , partition is {}", key, value, result.getRecordMetadata().partition());
-    }
+//    private ProducerRecord<Integer, String> buildProducerRecord(Integer key, String value, String topic) {
+//
+//
+//        List<Header> recordHeaders = new ArrayList<>();
+//        recordHeaders.add(new RecordHeader("event-source", "scanner".getBytes()));
+//
+//        return new ProducerRecord<>(topic, null, key, value, recordHeaders);
+//    }
+//
+//    private void handleFailure(Integer key, String value, Throwable ex) {
+//        log.error("Error Sending the Message and the exception is {}", ex.getMessage());
+//        try {
+//            throw ex;
+//        } catch (Throwable throwable) {
+//            log.error("Error in OnFailure: {}", throwable.getMessage());
+//        }
+//
+//    }
+//
+//    private void handleSuccess(Integer key, String value, SendResult<Integer, String> result) {
+//        log.info("Message Sent SuccessFully for the key : {} and the value is {} , partition is {}", key, value, result.getRecordMetadata().partition());
+//    }
 }

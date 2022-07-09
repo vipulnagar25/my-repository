@@ -34,44 +34,42 @@ eureka:
   instance:
     hostname: localhost
 
+
+
+
+resilience4j:
+  circuitbreaker:
+    ogriservice:
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        waitDurationInOpenState: 5s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED
+
+
 management:
+  health:
+    circuitbreakers:
+      enabled: true
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: health
+  endpoint:
+    health:
+      show-details: always
 
 
 
 
 
 
-#resilience4j:
-#  circuitbreaker:
-#    configs:
-#      default:
-#        registerHealthIndicator: true
-#        slidingWindowSize: 10
-#        minimumNumberOfCalls: 5
-#        permittedNumberOfCallsInHalfOpenState: 3
-#        automaticTransitionFromOpenToHalfOpenEnabled: true
-#        waitDurationInOpenState: 5s
-#        failureRateThreshold: 50
-#        eventConsumerBufferSize: 10
-#        recordExceptions:
-#          - org.springframework.web.client.HttpServerErrorException
-#          - java.util.concurrent.TimeoutException
-#          - java.io.IOException
-#    instances:
-#      service1:
-#        registerHealthIndicator: true
-#        ringBufferSizeInClosedState: 10
-#        ringBufferSizeInHalfOpenState: 3
-#        waitDurationInOpenState: PT50S
-#        failureRateThreshold: 50
-#        eventConsumerBufferSize: 10
-#
-#
-#
+
+
 graphql:
   servlet:
     mapping: /graphql
@@ -88,41 +86,3 @@ actionbean:
     enabled: false
 
 ---
-
-spring:
-  profiles: prod
-  data:
-    mongodb:
-      host: localhost
-      port: 27017
-      database: ogri_portal
-  application:
-    name: ogri_portal
-server:
-  port: 8082
-
-
-eureka:
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    hostname: localhost
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-
-graphql:
-  servlet:
-    mapping: /graphql
-    enabled: true
-    corsEnabled: false
-    exception-handlers-enabled: true
-  tools:
-    schema-location-pattern: "**/*.graphqls"
-    introspection-enabled: true

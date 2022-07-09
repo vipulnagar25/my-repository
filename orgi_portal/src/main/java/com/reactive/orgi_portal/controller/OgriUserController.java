@@ -9,6 +9,7 @@ import graphql.ExecutionResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -27,7 +28,6 @@ public class OgriUserController {
   //@Autowired
     com.reactive.orgi_portal.profileAndCondition.ConditionClass conditionClass;
 
-
     @PostMapping(value = OgriApiPath.SAVE_OGRI_USER, produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
     public Mono<ObjectNode> saveOgriUser(@RequestBody OgriUser ogriUser) {
 
@@ -43,7 +43,14 @@ public class OgriUserController {
     }
 
     @GetMapping(value = OgriApiPath.ALL_USERS, produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
+   // @CircuitBreaker(name = "ogriservice" ,fallbackMethod = "getDummyUser")
     public Flux<OgriUser> getAllOgriUser() {
+        log.info("OgriUserController start calling of getAllOgriUser-->");
+
+        return ogriUserService.getAllOgriUser();
+    }
+
+    public Flux<OgriUser> getDummyUser() {
         log.info("OgriUserController start calling of getAllOgriUser-->");
 
         return ogriUserService.getAllOgriUser();
@@ -93,7 +100,7 @@ public class OgriUserController {
 
         return new Object();
     }
-    @PutMapping(value ="thtthht"+ "/{acn}", produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
+    @PutMapping(value ="testingTh"+ "/{acn}", produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
     public Mono<Long> deleteOgriUser1(@PathVariable final Integer acn) {
         log.info("OgriUserController start calling of deleteOgriUser acn-->{}", acn);
         return ogriUserService.deleteOgriUser(acn);
