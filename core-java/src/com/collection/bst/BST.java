@@ -174,19 +174,19 @@ public class BST {
     public static void main(String[] args) {
         BST bst = new BST();
         bst.insertByIteration(11);
-        bst.insertByIteration(8);
+
         bst.insertByIteration(6);
         bst.insertByIteration(7);
         bst.insertByIteration(8);
         bst.insertByIteration(9);
         bst.insertByIteration(14);
-       // bst.insertByIteration(13);
-       // bst.insertByIteration(12);
+        bst.insertByIteration(13);
+        bst.insertByIteration(12);
         bst.insertByIteration(15);
-//        bst.insertByIteration(1);
+        bst.insertByIteration(1);
         bst.inOrderByIterative();
         System.out.println();
-        bst.delete( 14);
+      //  bst.delete(14);
         bst.inOrderByIterative();
         System.out.println();
         System.out.println(bst.root.data);

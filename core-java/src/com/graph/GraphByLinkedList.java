@@ -14,7 +14,7 @@ public class GraphByLinkedList {
         this.V = nodes;
         this.E = 0;
         this.adj = new LinkedList[nodes];
-        for(int v = 0; v < V; v++) {
+        for (int v = 0; v < V; v++) {
             adj[v] = new LinkedList<>();
         }
     }
@@ -28,9 +28,9 @@ public class GraphByLinkedList {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(V + " vertices, " + E + " edges " + "\n");
-        for(int v = 0; v < V; v++) {
+        for (int v = 0; v < V; v++) {
             sb.append(v + ": ");
-            for(int w : adj[v]) {
+            for (int w : adj[v]) {
                 sb.append(w + " ");
             }
             sb.append("\n");
@@ -43,12 +43,12 @@ public class GraphByLinkedList {
         Queue<Integer> q = new LinkedList<>();
         visited[s] = true;
         q.offer(s);
-        while(!q.isEmpty()) {
+        while (!q.isEmpty()) {
             int u = q.poll();
             System.out.print(u + "---> ");
-            System.out.println(adj[u]);
-            for(int v : adj[u]) {
-                if(!visited[v]) {
+            //System.out.println(adj[u]);
+            for (int v : adj[u]) {
+                if (!visited[v]) {
                     visited[v] = true;
                     q.offer(v);
                 }
@@ -60,13 +60,13 @@ public class GraphByLinkedList {
         boolean[] visited = new boolean[V];
         Stack<Integer> stack = new Stack<>();
         stack.push(s);
-        while(!stack.isEmpty()) {
+        while (!stack.isEmpty()) {
             int u = stack.pop();
-            if(!visited[u]) {
+            if (!visited[u]) {
                 visited[u] = true;
                 System.out.print(u + "---> ");
-                for(int v : adj[u]) {
-                    if(!visited[v]) {
+                for (int v : adj[u]) {
+                    if (!visited[v]) {
                         stack.push(v);
                     }
                 }
@@ -80,14 +80,12 @@ public class GraphByLinkedList {
         g.addEdge(1, 2);
         g.addEdge(2, 3);
         g.addEdge(3, 0);
-        //System.out.println(g);
-        /*
-         * for (int i = 0; i < g.V; i++) { g.adj[i].forEach(e->{
-         * System.err.print(e+"vi");
-         *
-         * }); System.out.println(); }
-         */
+       // System.out.println(g);
+        //   g.bfsGraph(0);
         g.bfsGraph(0);
+        System.out.println();
+        g.dfs(0);
+
     }
 
 }
