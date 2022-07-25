@@ -14,6 +14,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.Duration;
+
 @Slf4j
 @Service
 public class OgriUserServiceImpl implements OgriUserService {
@@ -98,7 +100,7 @@ public class OgriUserServiceImpl implements OgriUserService {
                 .groupName("OgriUser")
                 .commandName("getAllOgriUserDb")
                 .toFlux(); */
-        return orgiUserRepository.findAll();
+        return orgiUserRepository.findAll().delayElements(Duration.ofSeconds(5));
                // .timeout(Duration.ofMillis(1)).onErrorResume(this::getAllOgriUserFallBack);
     }
 
