@@ -24,7 +24,7 @@ public class RemoveZeroSumConsecutive {
 
 
         });
-        System.out.println(stack.toString());
+        System.out.println(stack);
 
     }
 

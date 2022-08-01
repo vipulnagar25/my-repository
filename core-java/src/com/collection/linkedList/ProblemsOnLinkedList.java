@@ -10,9 +10,21 @@ public class ProblemsOnLinkedList {
             } else {
                 currentNode = currentNode.next;
             }
+        }
+    }
 
+    public boolean isCyclic(MyLinkedList linkedList) {
+        Node slowPointer = linkedList.head;
+        Node fastPointer = linkedList.head;
+        if (fastPointer != null && fastPointer.next != null) {
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next.next;
+            if (slowPointer == fastPointer) {
+                return true;
+            }
         }
 
+        return false;
     }
 
 
@@ -30,9 +42,10 @@ public class ProblemsOnLinkedList {
         linkedList.add("4");
         linkedList.add("4");
         linkedList.add("5");
-        linkedList.printLinkedList();
+       // linkedList.printLinkedList();
         problems.removeDuplicateFromSortedList(linkedList);
         linkedList.printLinkedList();
+        System.out.println(problems.isCyclic(linkedList));
 
 
     }

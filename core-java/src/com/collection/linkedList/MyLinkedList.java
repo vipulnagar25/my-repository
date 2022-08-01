@@ -1,12 +1,12 @@
 package com.collection.linkedList;
 
-public class MyLinkedList {
+public class
+MyLinkedList {
     Node head;
     int listSize;
 
     public void add(Object data) {
         Node newNode = new Node(data);
-        listSize++;
         if (head == null) {
             head = newNode;
         } else {
@@ -15,8 +15,10 @@ public class MyLinkedList {
 
                 currentNode = currentNode.next;
             }
+
             currentNode.next = newNode;
         }
+        listSize++;
     }
 
     public void printLinkedList() {
@@ -134,17 +136,17 @@ public class MyLinkedList {
 
 
     public static void main(String[] args) {
-       // Doubl
+        // Doubl
         MyLinkedList linkedList = new MyLinkedList();
         linkedList.add("1");
         linkedList.add("2");
         linkedList.add("3");
         linkedList.add("4");
         //  linkedList.printLinkedList();
-        linkedList.addAtFirst("5");
+      //  linkedList.addAtFirst("5");
         // linkedList.printLinkedList();
         // System.out.println(linkedList.getMiddleElement());
-        linkedList.addAtLast("6");
+       // linkedList.addAtLast("6");
         // linkedList.printLinkedList();
         // System.out.println(linkedList.getMiddleElement());
         // linkedList.reverseLinkedList();
@@ -153,9 +155,9 @@ public class MyLinkedList {
         //  linkedList.printLinkedList();
         //linkedList.removeFirst();
         linkedList.printLinkedList();
-        System.out.println(linkedList.listSize);
-        linkedList.removeAt(9);
-        linkedList.printLinkedList();
+      //  System.out.println(linkedList.listSize);
+      //  linkedList.removeAt(9);
+       // linkedList.printLinkedList();
         System.out.println(linkedList.listSize);
     }
 

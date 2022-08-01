@@ -4,11 +4,11 @@ import java.util.HashMap;
 
 public final class Student {
 
-    private String name;
-    private HashMap<String, String> map;
-    private int stuId;
+    private final String name;
+    private final HashMap<String, String> map;
+    private final int stuId;
 
-    private Address address;
+    private final Address address;
 
 
     public String getName() {

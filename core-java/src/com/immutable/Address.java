@@ -1,7 +1,7 @@
 package com.immutable;
 
 public class Address implements Cloneable{
-    private int pinCode;
+     private  int pinCode;
     private String street;
 
     public int getPinCode() {
