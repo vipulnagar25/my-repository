@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 class Employee {
 
@@ -52,6 +53,19 @@ public class FindSecondHighest {
         updateName.accept(user);
 
         System.out.println(user.getEmp_name()); //Roytuts
+
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(3);
+        list.add(2);
+
+        int i = list.stream().min(Comparator.naturalOrder()).get();
+        System.out.println(i);
+        List<Integer> s1 = list.stream().sorted(Comparator.reverseOrder()).distinct().collect(Collectors.toList());
+        System.out.println(s1);
 
 
     }

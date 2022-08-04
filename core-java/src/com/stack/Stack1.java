@@ -2,7 +2,6 @@ package com.stack;
 
 
 public class Stack1 {
-
     Object[] elements;
     int stackSize;
     int capacity = 10;

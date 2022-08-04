@@ -9,7 +9,6 @@ public class MyDbLinkedList {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
-
         } else {
             Node currentNode = head;
             while (currentNode.next != null) {

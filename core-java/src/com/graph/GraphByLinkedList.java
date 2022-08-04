@@ -42,7 +42,7 @@ public class GraphByLinkedList {
         boolean[] visited = new boolean[V];
         Queue<Integer> q = new LinkedList<>();
         visited[s] = true;
-        q.offer(s);
+        q.add(s);
         while (!q.isEmpty()) {
             int u = q.poll();
             System.out.print(u + "---> ");

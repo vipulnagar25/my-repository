@@ -38,8 +38,8 @@ public class SumOfSubArray {
 
     public static void main(String[] args) {
         int sum = 10;
-        int[] array = {2, 3, 5, 8, 10, 1, 9};
-        // printSubArray(array, sum);
-        find_subarray(array,sum);
+        int[] array = {7,8,2,6,22,23};
+        printSubArray(array, sum);
+        //find_subarray(array,sum);
     }
 }
