@@ -4,8 +4,8 @@ public class FindCountOfKeyByBinarySearch {
     public static int getIndexByBinarySearch(int[] sortedArray, int key, boolean isFirst) {
         int start = 0;
         int result = -1;
-        int last = sortedArray.length ;
-        while (start <last) {
+        int last = sortedArray.length;
+        while (start < last) {
             int mid = (last + start) / 2;
             if (sortedArray[mid] == key) {
                 result = mid;
@@ -20,6 +20,8 @@ public class FindCountOfKeyByBinarySearch {
                 last = mid - 1;
             }
         }
+
+
         return result;
     }
 
