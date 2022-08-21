@@ -22,18 +22,18 @@ public class Find2NdMostFreqElement {
         AtomicInteger secondElement = new AtomicInteger();
         secondElement.set(0);
         AtomicReference<String> s1 = new AtomicReference<>("");
-//        map.forEach((key, value) -> {
-//            if (value > firstElement.get()) {
-//                secondElement.set(firstElement.get());
-//                firstElement.set(value);
-//                s1.set(key + "");
-//            }  if (value > secondElement.get() && firstElement.get() != value) {
-//                secondElement.set(value);
-//                s1.set(key + "");
-//            }
-//            System.out.println(key + "::" + value);
-//        });
-        System.out.println(s1.get());
+       map.forEach((key, value) -> {
+            if (value > firstElement.get()) {
+                secondElement.set(firstElement.get());
+                firstElement.set(value);
+                s1.set(key + "");
+            }  if (value > secondElement.get() && firstElement.get() != value) {
+               secondElement.set(value);
+               s1.set(key + "");
+           }
+           System.out.println(key + "::" + value);
+       });
+        System.out.println(secondElement.get());
     }
 
 
