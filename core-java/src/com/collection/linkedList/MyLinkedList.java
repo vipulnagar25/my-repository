@@ -143,9 +143,9 @@ MyLinkedList {
         linkedList.add("3");
         linkedList.add("4");
         //  linkedList.printLinkedList();
-      //  linkedList.addAtFirst("5");
+       linkedList.add("5");
         // linkedList.printLinkedList();
-        // System.out.println(linkedList.getMiddleElement());
+        System.out.println(linkedList.getMiddleElement());
        // linkedList.addAtLast("6");
         // linkedList.printLinkedList();
         // System.out.println(linkedList.getMiddleElement());

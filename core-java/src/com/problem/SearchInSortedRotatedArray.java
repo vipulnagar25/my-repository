@@ -28,10 +28,29 @@ public class SearchInSortedRotatedArray {
         return -1;
     }
 
+    public static int search(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        int result = -1;
+        while (left <= right) {
+            if (nums[left] == target) {
+                result = left;
+                break;
+            } else if (nums[right] == target) {
+                result = right;
+                break;
+            }
+            left++;
+            right--;
+        }
+        return result;
+    }
+
 
     public static void main(String[] args) {
-        int array[] = { 1, 2, 0};
-        System.out.println(findElement(array, 0));
+        int array[] = {4,5,6,7,0,1,2,3};
+       System.out.println(findElement(array, 2));
+      //  System.out.println(search(array,2));
 
     }
 }
