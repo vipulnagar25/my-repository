@@ -35,7 +35,8 @@ public class RemoveDuplicate {
 
     public static void main(String[] args) {
         //{0,1,1,2,2,2,2,3,24};
-        int array[] = {0,0,0,0,1,1,1,2,2,4,5,6};
+        //int array[] = {0,0,0,0,1,1,1,2,2,4,5,6};
+        int array[] = {1,1,1,2,2,2,3};
         removeDuplicate(array);
 
     }

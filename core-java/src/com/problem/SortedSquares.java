@@ -23,7 +23,7 @@ public class SortedSquares {
     }
 
     public static void main(String[] args) {
-        int arr[] = {-3, -3, 4, 5};
+        int arr[] = {-3, -3, 0, 4, 5};
         sortedSquares(arr);
     }
 }
