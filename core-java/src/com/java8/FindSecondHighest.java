@@ -1,9 +1,6 @@
 package com.java8;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
@@ -16,10 +13,10 @@ class Employee {
         this.emp_salary = emp_salary;
     }
 
-    int emp_id;
-    String emp_name;
+    public int emp_id;
+    public String emp_name;
 
-    public int getEmp_id() {
+     public int getEmp_id() {
         return emp_id;
     }
 
@@ -31,7 +28,7 @@ class Employee {
         return emp_salary;
     }
 
-    int emp_salary;
+    public int emp_salary;
 
 }
 
@@ -66,7 +63,9 @@ public class FindSecondHighest {
         System.out.println(i);
         List<Integer> s1 = list.stream().sorted(Comparator.reverseOrder()).distinct().collect(Collectors.toList());
         System.out.println(s1);
-
+//        Map<String, Integer> result3 = empList.stream().collect(
+//                Collectors.toMap(Employee::getEmp_id, Collectors.counting()));
+//        System.out.println(result3);
 
     }
 }

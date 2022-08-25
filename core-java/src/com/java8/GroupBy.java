@@ -64,6 +64,12 @@ public class GroupBy {
         System.out.println(sum);
         List<String> uniqueList = items.stream().distinct().collect(Collectors.toList());
         System.out.println(uniqueList);
+//       Map<String, List<Integer>> map4 = items.stream().collect(Collectors.groupingBy(Item::getName,Collectors.mapping(Item::getQty, Collectors.mapping(Item::getQty,
+//                Collectors.toList()))));
+//
+//
+
+       // System.out.println("Result 3 : " + result3);
 
     }
 }

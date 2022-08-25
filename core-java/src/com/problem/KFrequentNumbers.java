@@ -23,7 +23,7 @@ public class KFrequentNumbers {
                     } else {
                         return o2.getValue() - o1.getValue();
                     }
-                }).forEachOrdered(e -> finalMap.put(e.getKey(), e.getValue()));
+                }).forEach(e -> finalMap.put(e.getKey(), e.getValue()));
         AtomicInteger atomicInteger = new AtomicInteger(k);
         finalMap.forEach((key, value) -> {
             if (atomicInteger.get() > 0) {
