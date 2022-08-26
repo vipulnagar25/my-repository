@@ -188,7 +188,32 @@ public class TreeProblem {
         }
         System.out.println(ans);
     }
+    public boolean isSymmetric(TreeNode root)
+    {
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root.left);
+        q.add(root.right);
 
+        while (!q.isEmpty())
+        {
+            TreeNode tempLeft = q.remove();
+            TreeNode tempRight = q.remove();
+            if (tempLeft==null && tempRight==null)
+                continue;
+            if ((tempLeft==null && tempRight!=null) ||
+                    (tempLeft!=null && tempRight==null))
+                return false;
+            if (tempLeft.data != tempRight.data)
+                return false;
+            q.add(tempLeft.left);
+            q.add(tempRight.right);
+            q.add(tempLeft.right);
+            q.add(tempRight.left);
+        }
+
+        /* if the flow reaches here, return true*/
+        return true;
+    }
 
     public static void main(String[] args) {
         MyTree tree = new MyTree();

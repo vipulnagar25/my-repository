@@ -18,6 +18,7 @@ public class Problem1 {
     }
 
     public static void fibonacci(int n) {
+        System.out.println(n);
         int i = 0;
         int j = 1;
         System.out.print(i + " ");
@@ -45,11 +46,11 @@ public class Problem1 {
     public static void main(String[] args) {
 
         int[] array = {1, 2, 3, 4, 5};
-        System.out.println(Arrays.toString(array));
-        rightRotation(array);
+        //System.out.println(Arrays.toString(array));
+        //   rightRotation(array);
         fibonacci(6);
         System.out.println();
-        substring("abcd");
+        // substring("abcd");
 
     }
 }
