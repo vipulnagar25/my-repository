@@ -204,7 +204,7 @@ public class TreeProblem {
                     (tempLeft!=null && tempRight==null))
                 return false;
             if (tempLeft.data != tempRight.data)
-                return false;
+                 return false;
             q.add(tempLeft.left);
             q.add(tempRight.right);
             q.add(tempLeft.right);

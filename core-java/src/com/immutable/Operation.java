@@ -2,6 +2,7 @@ package com.immutable;
 
 import com.sun.tools.javac.Main;
 
+import java.util.Date;
 import java.util.HashMap;
 
 public class Operation {
@@ -13,10 +14,15 @@ public class Operation {
         Address address = new Address();
         address.setPinCode(246723);
         address.setStreet("main");
-        Student student = new Student(1, "vipul", map, address);
+        Date date =new Date();
+        Student student = new Student(1, "vipul", map, address,date);
         Address address1 = student.getAddress();
         address1.setStreet("vipul");
         System.out.println(student.getAddress().getStreet());
-
+        System.out.println(student.getDate());
+       Date d2= student.getDate();
+        d2.setYear(2000);
+        System.out.println(d2);
+        System.out.println(student.getDate());
     }
 }

@@ -1,5 +1,6 @@
 package com.immutable;
 
+import java.util.Date;
 import java.util.HashMap;
 
 public final class Student {
@@ -10,6 +11,11 @@ public final class Student {
 
     private final Address address;
 
+    public Date getDate() {
+        return (Date) date.clone();
+    }
+
+    private final Date date;
 
     public String getName() {
         return name;
@@ -27,11 +33,12 @@ public final class Student {
         return (Address) address.clone();
     }
 
-    public Student(int stuId, String name, HashMap<String, String> map, Address address) {
+    public Student(int stuId, String name, HashMap<String, String> map, Address address, Date date) {
         this.stuId = stuId;
         this.name = name;
         this.map = map;
         this.address = address;
+        this.date = date;
         System.out.println("Student setup done");
     }
 
