@@ -2,7 +2,7 @@ package com.problem;
 
 import java.util.Arrays;
 
-public class Problem1 {
+public class RoationFiboSubtring {
     public static void rightRotation(int array[]) {
         int length = array.length - 1;
         int i = 0;

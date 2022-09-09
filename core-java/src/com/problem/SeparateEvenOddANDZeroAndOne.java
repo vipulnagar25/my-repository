@@ -2,7 +2,7 @@ package com.problem;
 
 import java.util.Arrays;
 
-public class Prog1 {
+public class SeparateEvenOddANDZeroAndOne {
     public static void separateZeroAndOne(int[] array) {
         System.out.println(Arrays.toString(array));
         int start = 0;

@@ -20,8 +20,10 @@ public class Operation {
         address1.setStreet("vipul");
         System.out.println(student.getAddress().getStreet());
         System.out.println(student.getDate());
-       Date d2= student.getDate();
-        d2.setYear(2000);
+         Date d2= student.getDate();
+       // d2.setYear(2000);
+        d2.setDate(
+                1);
         System.out.println(d2);
         System.out.println(student.getDate());
     }

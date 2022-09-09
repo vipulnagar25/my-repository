@@ -8,9 +8,9 @@ package com.problem;
 //        Output : 39
 //
 
-public class Problem4 {
+public class MaximumSumInSubArrayOfSizek {
 
-    // Returns maximum sum in a subarray of size k.
+    // Returns .
     public static int maxSum(int arr[], int n, int k)
     {
         // k must be smaller than n

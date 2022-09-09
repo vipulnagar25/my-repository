@@ -1,6 +1,6 @@
 package com.problem;
 
-public class Problem3 {
+public class SecondMostFreq {
     static final int NO_OF_CHARS = 256;
     static char get2ndMostFreq(String str1) {
 
