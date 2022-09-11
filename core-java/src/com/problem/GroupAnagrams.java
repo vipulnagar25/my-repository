@@ -17,6 +17,7 @@ public class GroupAnagrams {
                     tempMap.put(str.charAt(i), 1);
                 }
             }
+            System.out.println(tempMap);
             if (map.containsKey(tempMap))
                 map.get(tempMap).add(str);
             else {

@@ -6,6 +6,7 @@ public class MyThread extends Thread {
         System.out.println("Start of  myMyThread");
         System.out.println(Thread.currentThread().getName());
         try {
+            wait();
             Thread.sleep(1000);
         } catch(InterruptedException e) {
             e.printStackTrace();
