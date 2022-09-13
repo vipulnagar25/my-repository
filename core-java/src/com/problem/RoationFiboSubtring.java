@@ -33,6 +33,13 @@ public class RoationFiboSubtring {
 
     }
 
+    public static int fibonacciByRecursion(int n) {
+        if (n <= 1)
+            return n;
+        return fibonacciByRecursion(n - 1) + fibonacciByRecursion(n - 2);
+
+    }
+
     public static void substring(String str) {
         for (int i = 0; i < str.length(); i++) {
             for (int j = i + 1; j <= str.length(); j++) {
@@ -45,12 +52,12 @@ public class RoationFiboSubtring {
 
     public static void main(String[] args) {
 
-        int[] array = {1, 2, 3, 4, 5};
+        //int[] array = {1, 2, 3, 4, 5};
         //System.out.println(Arrays.toString(array));
         //   rightRotation(array);
         fibonacci(6);
         System.out.println();
-        // substring("abcd");
+        fibonacciByRecursion(6);
 
     }
 }
