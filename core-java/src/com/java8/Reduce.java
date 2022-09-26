@@ -1,6 +1,7 @@
 package com.java8;
 
 import java.util.Arrays;
+import java.util.OptionalDouble;
 
 public class Reduce {
     public static void main(String[] args) {
@@ -10,7 +11,7 @@ public class Reduce {
         int sum = Arrays.stream(numbers).reduce(0, (a, b) -> a + b);
 
         System.out.println("sum : " + sum);
-        int sum1 = Arrays.stream(numbers).sum();
+        OptionalDouble sum1 = Arrays.stream(numbers).average();
         System.out.println(sum1);
     }
 }

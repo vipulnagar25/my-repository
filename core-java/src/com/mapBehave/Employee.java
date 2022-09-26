@@ -30,7 +30,7 @@ public class Employee {
 
     public static void main(String[] args) {
         Employee emp = new Employee(101, "ram");
-        Employee emp1 = new Employee(101, "mar");
+        Employee emp1 = new Employee(101, "ram");
         Map<Employee, Integer> map = new HashMap<>();
         map.put(emp, 1);
         map.put(emp1, 2);

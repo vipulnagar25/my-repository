@@ -2,10 +2,7 @@ package com.java8;
 
 
 import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -70,6 +67,13 @@ public class GroupBy {
 //
 
        // System.out.println("Result 3 : " + result3);
+
+//        map.entrySet().stream().sorted(Comparator.comparing(i -> i.getValue().Name))
+//                .collect(Collectors.toMap(
+//                        Map.Entry::getKey,
+//                        Map.Entry::getValue,
+//                        (e1, e2) -> e1, LinkedHashMap::new));
+
 
     }
 }
