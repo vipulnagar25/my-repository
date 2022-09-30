@@ -2,7 +2,17 @@ package com.java8;
 
 import java.util.*;
 import java.util.stream.Collectors;
+class Person{
+    String name;
+    String id;
+    public Person(String name, String id) {
+        this.name = name;
+        this.id = id;
+    }
 
+
+
+}
 public class JavaStreams {
     public static boolean isNumber(String s1) {
         try {
@@ -44,6 +54,17 @@ public class JavaStreams {
                 .flatMap(numberList -> numberList.stream())
                 .collect(Collectors.toList());
         System.out.println(flatList);
+
+
+
+
+        List<Person> l1=new ArrayList<>();
+        l1.add(new Person("vipul","1"));
+        l1.add(new Person("vipul1","11"));
+        List<Person> l2=new ArrayList<>();
+        l2.add(new Person("vipul","1"));
+        l2.add(new Person("vipul12","112"));
+        System.out.println(l1.stream().filter(e-> l2.stream().anyMatch(e1->e1.name.equals(e.name))).findAny().get().name);
 
     }
 }
