@@ -2,7 +2,7 @@ package com.problem;
 
 import java.util.Arrays;
 
-public class RoationFiboSubtring {
+public class RationFibSubstring {
     public static void rightRotation(int array[]) {
         int length = array.length - 1;
         int i = 0;

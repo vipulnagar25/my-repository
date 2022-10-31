@@ -5,16 +5,16 @@ import java.util.Arrays;
 public class EquilibriumIndex {
     public static void equilibrium(int arr[], int n) {
         int sum = 0; // initialize sum of whole array
-        int leftsum = 0; // initialize leftsum
+        int leftSum = 0; // initialize leftsum
         for (int i = 0; i < n; ++i) {
             sum += arr[i];
         }
-        System.out.println(leftsum + "total");
+        System.out.println(leftSum + "total");
         for (int i = 0; i < n; ++i) {
             sum -= arr[i]; // sum is now right sum for index i
-            if (leftsum == sum)
+            if (leftSum == sum)
                 System.out.println(arr[i] + "test");
-            leftsum += arr[i];
+            leftSum += arr[i];
         }
     }
 

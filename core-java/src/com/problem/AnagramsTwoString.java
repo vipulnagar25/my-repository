@@ -51,6 +51,7 @@ public class AnagramsTwoString {
                 }
 
             }
+            System.out.println(map.values().stream().anyMatch(e->e>1));
             System.out.println(map);
             System.out.println(true);
         }
@@ -60,5 +61,6 @@ public class AnagramsTwoString {
     public static void main(String[] args) {
         isAnagramCounting("table","tbael");
         isAnagrams("tea", "aee");
+       // Arrays.sort();
     }
 }

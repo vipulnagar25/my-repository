@@ -28,7 +28,7 @@ public class GroupAnagrams {
             }
         }
 
-        // Stores the result in a arraylist
+        // Stores the result in an arraylist
         ArrayList<ArrayList<String>> result = new ArrayList<>();
         for (HashMap<Character, Integer> temp : map.keySet())
             result.add(map.get(temp));
